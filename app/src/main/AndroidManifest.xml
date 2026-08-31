@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:name=".HamAudioLogApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@android:drawable/ic_btn_speak_now"
+        android:label="@string/app_name"
+        android:roundIcon="@android:drawable/ic_btn_speak_now"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HamAudioLog">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.HamAudioLog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.QsoAudioRecorderService"
+            android:foregroundServiceType="microphone"
+            android:exported="false" />
+
+        <!-- 4X2 桌面小组件广播接收器 -->
+        <receiver
+            android:name=".ui.widget.HamAudioLogWidgetProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.ham.audiolog.widget.UPDATE_WIDGET" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/ham_audio_log_widget_info" />
+        </receiver>
+
+        <!-- 录音回放通知栏控制器广播接收器 -->
+        <receiver
+            android:name=".domain.manager.AudioPlaybackReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.ham.audiolog.PLAYBACK_PLAY_PAUSE" />
+                <action android:name="com.ham.audiolog.PLAYBACK_REWIND_5S" />
+                <action android:name="com.ham.audiolog.PLAYBACK_FORWARD_5S" />
+                <action android:name="com.ham.audiolog.PLAYBACK_STOP" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

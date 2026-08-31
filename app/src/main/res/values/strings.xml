@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HamAudioLog</string>
+    <string name="widget_name">HamAudioLog 快捷控制</string>
+    <string name="widget_description">4X2 通联录音与打点桌面快捷小组件</string>
+    <string name="widget_status_standby">⚪ 待机就绪</string>
+    <string name="widget_status_recording">🔴 录制中</string>
+    <string name="widget_btn_start">开始录音</string>
+    <string name="widget_btn_stop">结束录音</string>
+    <string name="widget_btn_mark">＋ MARK 打点</string>
+    <string name="widget_btn_open">打开应用</string>
+    <string name="widget_markers_format">打点: %d 次</string>
+</resources>

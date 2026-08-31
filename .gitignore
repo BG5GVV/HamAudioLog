@@ -1,0 +1,74 @@
+# ====================================================================
+# Android & Gradle Build Artifacts
+# ====================================================================
+*.apk
+*.aar
+*.ap_
+*.aab
+*.dex
+*.class
+apk_history/
+bin/
+gen/
+out/
+build/
+app/build/
+*/build/
+captures/
+.externalNativeBuild/
+.cxx/
+proguard/
+
+# Gradle Cache
+.gradle/
+buildOutputCleanup/
+
+# Kotlin / KSP
+.kotlin/
+ksp-temp/
+
+# Local configuration file (SDK path, NDK path, etc.)
+local.properties
+secrets.properties
+
+# ====================================================================
+# IDE / Editor Files
+# ====================================================================
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.navigation/
+.fleet/
+.project
+.classpath
+.settings/
+
+# Keystore / Signing files
+*.jks
+*.keystore
+
+# Memory & Crash Dumps
+*.hprof
+
+# ====================================================================
+# Log & OS Files
+# ====================================================================
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak
+*.swp
+*~
+
+# ====================================================================
+# AI & Agent Artifacts / Planning / Walkthrough Documents
+# ====================================================================
+AGENTS.md
+.agents/
+
+
+
